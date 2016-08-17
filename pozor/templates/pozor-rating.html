@@ -1,0 +1,23 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+    <h1>Рейтинг позора</h1>
+    <table class="table desk-block">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Имя</th>
+                <th>Сколько раз опозорен</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in rating %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>{{ item.count }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends 'basic.html' %}
+
+{% block content %}
+    <h1>Новый позор</h1>
+    {% if message %}
+        <div class="alert alert-info message" role="alert">
+            {{ message }}
+        </div>
+    {% endif %}
+    <form action="/pozor/add" method="post">
+        <div class="form-group desk-block">
+            <label for="name">Имя опозорившегося</label>
+            <input type="text" class="form-control" id="name" placeholder="Например, Аня" name="name">
+        </div>
+        <div class="form-group desk-block">
+            <label for="action">Причина позора</label>
+            <input type="text" class="form-control" id="action" placeholder="Например, играет в покемонов" name="action">
+        </div>
+        <div class="form-group desk-block">
+            <label for="code">Кодовое слово</label>
+            <input type="password" class="form-control" id="code" placeholder="Его знает Сева" name="code">
+        </div>
+        <button type="submit" class="btn btn-primary">Опозорить</button>
+    </form>
+{% endblock %}
